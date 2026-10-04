@@ -1,0 +1,259 @@
+/* =====================================================
+   PORTFOLIO STYLESHEET  (plain CSS, no frameworks)
+   Theme: dark "night sky" with a blue/teal accent
+   ===================================================== */
+
+/* ========== 1. VARIABLES & RESET ==========
+   Colours live in variables, so you can change the whole theme here */
+:root {
+  --bg: #0a0f1f;            /* page background (deep night blue) */
+  --bg-alt: #0e1530;        /* alternate section background */
+  --card: #131b38;          /* card background */
+  --border: #24305c;        /* thin card borders */
+  --text: #e7ecff;          /* main text */
+  --muted: #9aa7d1;         /* secondary text */
+  --accent: #7c9cff;        /* blue accent */
+  --accent-2: #5eead4;      /* teal accent */
+  --radius: 16px;
+  --max-width: 1100px;      /* width of the content area */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }  /* smooth scrolling for nav links */
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-2); }
+
+/* Keyboard users see a clear outline when tabbing through links */
+a:focus-visible { outline: 3px solid var(--accent-2); outline-offset: 3px; border-radius: 6px; }
+
+/* ========== 2. HEADER & NAVIGATION ========== */
+.site-header {
+  position: sticky;                       /* stays at top while scrolling */
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 15, 31, 0.85);
+  backdrop-filter: blur(10px);            /* frosted-glass effect */
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.logo { color: #fff; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.5px; }
+.logo span { color: var(--accent-2); }
+
+.nav-links { list-style: none; display: flex; gap: 6px; flex-wrap: wrap; }
+.nav-links a {
+  display: block;
+  padding: 8px 14px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 20px;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-links a:hover { background: rgba(124, 156, 255, 0.15); color: #fff; }
+
+/* ========== 3. HERO (HOME) SECTION ==========
+   The starry background is made from several tiny radial gradients */
+.hero {
+  padding: 90px max(20px, calc((100% - var(--max-width)) / 2));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  background:
+    radial-gradient(1.5px 1.5px at 12% 22%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 28% 68%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 47% 14%, #cfd8ff 50%, transparent 51%),
+    radial-gradient(1px 1px at 63% 80%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 78% 30%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 90% 62%, #cfd8ff 50%, transparent 51%),
+    radial-gradient(1px 1px at 5% 85%, #fff 50%, transparent 51%),
+    radial-gradient(circle at 80% 20%, rgba(124, 156, 255, 0.22), transparent 45%),
+    linear-gradient(180deg, #060a18 0%, var(--bg) 100%);
+}
+
+.hero-text { flex: 1; }
+.greeting { color: var(--accent-2); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem; }
+
+.hero h1 {
+  font-size: clamp(2.3rem, 6vw, 3.6rem);   /* scales with screen width */
+  line-height: 1.15;
+  margin: 8px 0;
+  color: #fff;
+  /* gradient-coloured name (falls back to white if unsupported) */
+  background: linear-gradient(90deg, #fff, var(--accent) 60%, var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline { font-size: 1.2rem; color: var(--muted); margin-bottom: 16px; }
+.intro { max-width: 540px; margin-bottom: 30px; }
+
+/* Profile photo: round, with a glowing ring like the moon in your picture */
+.hero-photo img {
+  display: block;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;                       /* crops instead of stretching */
+  border-radius: 50%;
+  border: 4px solid var(--accent-2);
+  box-shadow: 0 0 0 10px rgba(94, 234, 212, 0.12),
+              0 0 60px rgba(124, 156, 255, 0.45);
+}
+
+/* ========== 4. BUTTONS ========== */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  margin: 0 10px 10px 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #0a0f1f;
+  font-weight: 700;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(124, 156, 255, 0.4); color: #0a0f1f; }
+
+.btn-outline { background: transparent; color: var(--text); border-color: var(--accent); }
+.btn-outline:hover { background: rgba(124, 156, 255, 0.15); color: #fff; }
+
+/* ========== 5. GENERAL SECTIONS ==========
+   Padding on the sides keeps content centred inside --max-width,
+   while the background colour still stretches across the full screen */
+.section {
+  padding: 80px max(20px, calc((100% - var(--max-width)) / 2));
+  scroll-margin-top: 60px;                 /* so the sticky nav doesn't hide headings */
+}
+.section.alt { background: var(--bg-alt); }
+
+.section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #fff;
+}
+.section h2::after {                       /* little gradient line under headings */
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 12px auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+/* ========== 6. CARDS & GRID ========== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s, border-color 0.25s;
+}
+.card:hover { transform: translateY(-5px); border-color: var(--accent); }
+
+.card p { color: var(--muted); }
+.card p + p { margin-top: 12px; }
+.card h3 { color: #fff; margin-bottom: 6px; font-size: 1.15rem; }
+.meta { color: var(--accent-2) !important; font-size: 0.9rem; margin-bottom: 8px; }
+.center { text-align: center; }
+
+/* About card is a single wide card, so keep the text comfortable to read */
+#about .card { max-width: 800px; margin: auto; }
+
+/* Grid: columns wrap automatically on smaller screens */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* ========== 7. SKILLS ========== */
+.skills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+.skills li {
+  padding: 10px 26px;
+  background: var(--card);
+  border: 1px solid var(--accent);
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.skills li:hover { background: var(--accent); color: #0a0f1f; transform: translateY(-3px); }
+
+/* ========== 8. CONTACT & SOCIAL LINKS ========== */
+.contact-card { max-width: 540px; margin: auto; text-align: center; }
+.contact-card p { margin-bottom: 8px; color: var(--text); }
+
+.social { margin-top: 22px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.social a {
+  padding: 10px 26px;
+  border: 2px solid var(--accent);
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+.social a:hover { background: var(--accent); color: #0a0f1f; }
+
+/* ========== 9. FOOTER ========== */
+.site-footer {
+  text-align: center;
+  padding: 24px 20px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+  background: #070b18;
+}
+
+/* ========== 10. RESPONSIVE DESIGN ==========
+   Rules below apply only on screens 768px wide or smaller (tablets/phones) */
+@media (max-width: 768px) {
+  .navbar { flex-direction: column; }
+  .nav-links { justify-content: center; }
+  .nav-links a { padding: 6px 10px; font-size: 0.9rem; }
+
+  .hero {
+    flex-direction: column-reverse;        /* photo appears above the text */
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 60px;
+    gap: 36px;
+  }
+  .hero-photo img { width: 210px; height: 210px; }
+  .intro { margin-left: auto; margin-right: auto; }
+
+  .section { padding-top: 56px; padding-bottom: 56px; }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}

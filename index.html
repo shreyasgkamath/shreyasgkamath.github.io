@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Makes the page scale correctly on phones (needed for responsive design) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio of Shreyas G Kamath">
+  <!-- REPLACE: page title shown in the browser tab -->
+  <title>Shreyas G Kamath | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER + NAVIGATION ==========
+       Each link jumps to a section using its id (e.g. #about) -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="#home" class="logo">Shreyas<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ========== HOME / HERO ==========
+         Profile photo, name and short introduction -->
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <p class="greeting">Hello, I'm</p>
+        <h1>Shreyas G Kamath</h1>
+        <!-- REPLACE: your role / tagline -->
+        <p class="tagline">Computer and Communication Engineering Student</p>
+        <p class="intro">
+          Third-year B.Tech student who enjoys combining coding with astronomy, physics,
+          economics and maths to solve real-world problems.
+        </p>
+        <a href="#contact" class="btn">Contact Me</a>
+        <a href="#about" class="btn btn-outline">Learn More</a>
+      </div>
+      <div class="hero-photo">
+        <!-- Your profile photo (assets/profile.jpg). To change it, replace that file or edit the name below.
+             Example: src="assets/my-photo.jpg" -->
+        <img src="assets/profile.jpg" alt="Profile photograph of Shreyas G Kamath">
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ME ========== -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <div class="card">
+        <p>
+          I am a third-year B.Tech student in Computer and Communication Engineering,
+          currently in my 5th semester and expected to graduate in 2028. I am based in
+          Manipal, Karnataka.
+        </p>
+        <p>
+          I enjoy studying astronomy, physics, economics and mathematics, and I like
+          using coding to explore and build things around these subjects. My goal is to
+          grow into an engineer who applies technology and analytical thinking to solve
+          real-world problems.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== EDUCATION / PROFESSIONAL INFO ========== -->
+    <section id="education" class="section alt">
+      <h2>Education &amp; Experience</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>B.Tech – Computer and Communication Engineering</h3>
+          <p class="meta">MIT &bull; 2024 – 2028 (expected)</p>
+          <p>Currently in 3rd year (5th semester). CGPA: 10.</p>
+        </article>
+        <article class="card">
+          <h3>Pre-University</h3>
+          <p class="meta">Sri Edu PU College, Bangalore &bull; [REPLACE: years]</p>
+          <p>[REPLACE: Stream and percentage, or delete this line.]</p>
+        </article>
+        <article class="card">
+          <h3>Academic Project – AIoT Air Quality Classification</h3>
+          <p class="meta">College project</p>
+          <p>Classifies air quality from IoT sensor data that has missing values, using median imputation and a Random Forest model.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <!-- REPLACE: keep only the skills you really have -->
+      <ul class="skills">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Python</li>
+        <li>Machine Learning</li>
+        <li>Mathematics</li>
+        <li>Problem Solving</li>
+      </ul>
+    </section>
+
+    <!-- ========== INTERESTS / HOBBIES ========== -->
+    <section id="interests" class="section alt">
+      <h2>Interests &amp; Hobbies</h2>
+      <div class="grid">
+        <div class="card center"><h3>Astronomy</h3><p>Exploring space, stars and how the universe works</p></div>
+        <div class="card center"><h3>Physics &amp; Maths</h3><p>Enjoying problems and ideas behind how things work</p></div>
+        <div class="card center"><h3>Economics &amp; Coding</h3><p>Learning how systems behave and building small programs</p></div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT + SOCIAL LINKS ========== -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="card contact-card">
+        <!-- REPLACE: put your real email in both places below -->
+        <p><strong>Email:</strong> <a href="mailto:shreyasgkamath@gmail.com">your.email@example.com</a></p>
+        <p><strong>Location:</strong> Manipal, Karnataka, India</p>
+
+        <!-- Social links (your usernames are already filled in) -->
+        <div class="social">
+          <a href="https://github.com/shreyasgkamath" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/shreyasgkamath" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Shreyas G Kamath. Built with HTML &amp; CSS.</p>
+  </footer>
+
+</body>
+</html>
